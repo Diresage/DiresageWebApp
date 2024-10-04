@@ -250,11 +250,11 @@
 
 .cursor {
   display: inline-block;
-  width: 7px;
-  height: 14px;
+  width: 4px;
+  height: 16px;
   background-color: #9997FF;
   animation: .8s infinite blink;
-  vertical-align: text-before-edge;
+  vertical-align: baseline;
 }
 
 @keyframes blink {
