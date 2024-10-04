@@ -250,8 +250,8 @@
 
 .cursor {
   display: inline-block;
-  width: 4px;
-  height: 16px;
+  width: 6px;
+  height: 12px;
   background-color: #9997FF;
   animation: .8s infinite blink;
   vertical-align: baseline;
