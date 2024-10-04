@@ -16,7 +16,7 @@
   <div class="container">
     <div class="row align-items-center rounded-3">
       <div class="col p-lg-5 pt-lg-3">
-        <h1 class="display-5 fw-bold lh-1 text-body-emphasis d-flex justify-content-center align-items-center">Well, it's not secret anymore.</h1>
+        <h1 class="display-5 fw-bold lh-1 text-body-emphasis d-flex justify-content-center align-items-center">Well, it ain't secret no mo.</h1>
       </div>
     </div>
   </div>
@@ -25,10 +25,10 @@
   <!-- About -->
     <section id="about">
         <div class="container">
-        <div class="row align-items-center rounded-3">
+        <div class="row align-items-center rounded-3 pt-5">
             <div class="col p-lg-5 pt-lg-3">
             <h2 class="display-5 fw-bold lh-1 text-body-emphasis">About</h2>
-              <p class="lead text-body-secondary">Diresage is an aspiring web developer who somehow manages to create websites and applications that are not entirely hideous. Despite fumbling through various technologies and tools like HTML, CSS, and JavaScript, Diresage is oddly into crafting websites that are almost user-friendly, somewhat functional and impossible to maintain.</p>
+              <p class="lead text-body-secondary pt-5">Diresage is an aspiring web developer who somehow manages to create websites and applications that are not entirely hideous. Despite fumbling through various technologies and tools like HTML, CSS, and JavaScript, Diresage is oddly into crafting websites that are almost user-friendly, somewhat functional and impossible to maintain.</p>
             </div>
         </div>
         </div>
@@ -37,10 +37,10 @@
   <!-- Projects -->
     <section id="projects">
         <div class="container">
-        <div class="row align-items-center rounded-3">
+        <div class="row align-items-center rounded-3 pt-3">
             <div class="col p-lg-5 pt-lg-3">
             <h2 class="display-5 fw-bold lh-1 text-body-emphasis">Projects</h2>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 pt-5">
                 <div class="col">
                 <div class="card h-100">
                     
@@ -71,9 +71,7 @@
     <div class="container">
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5">
         <div class="col">
-          <p class="text-body-secondary">©2024 Diresage</p>
-            <p class="text-body-secondary">Title BG: <a href="https://codepen.io/tommyho">tommyho</a></p>
-            <p class="text-body-secondary">Footer BG: <a href="https://codepen.io/P1N2O">P1N2O</a></p>
+          <p class="text-body-secondary glitch">©2024 Diresage</p>
         </div>
       </footer>
     </div>
@@ -83,11 +81,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script>
     let vantaEffect;
-    let highlightFrequency = 1.0;
-    let midtoneFrequency = 0.5;
-    let lowlightFrequency = 0.3;
-    let baseFrequency = 0.005;
-  
     function initVanta() {
       vantaEffect = VANTA.FOG({
         el: ".vanta-bg",
@@ -102,35 +95,7 @@
         scaleMobile: 4
       });
     }
-    
-    /*
-    highlightColor: 0x849de3,
-        midtoneColor: 0x9a42b8,
-        lowlightColor: 0x2c0587,
-        baseColor: 0x0,
-     */
-  
-    function colorCycle() {
-  // Cycle through rainbow colors at different frequencies
-      vantaEffect.setOptions({
-        highlightColor: cycleColor(highlightFrequency),
-        midtoneColor: cycleColor(midtoneFrequency),
-        lowlightColor: cycleColor(lowlightFrequency),
-        baseColor: cycleColor(baseFrequency),
-      });
-      requestAnimationFrame(colorCycle);
-    }
-  
-    function cycleColor(frequency) {
-        const time = Date.now() * 0.0005;
-        const r = Math.sin(frequency * time) * 127 + 128;
-        const g = Math.sin(frequency * time + 2) * 127 + 128;
-        const b = Math.sin(frequency * time + 4) * 127 + 128;
-        return (r << 16) + (g << 8) + b;
-    }
-    
     document.addEventListener("DOMContentLoaded", initVanta);
-    //requestAnimationFrame(colorCycle);
   </script>
 </body>
 
