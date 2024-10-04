@@ -71,7 +71,10 @@
     <div class="container">
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5">
         <div class="col">
-          <p class="text-body-secondary glitch">©2024 Diresage</p>
+          <span class="text-body-secondary glitch" data-text="©2024 Diresage">
+              > ©2024 Diresage
+          </span>
+            <div class="cursor"></div>
         </div>
       </footer>
     </div>
@@ -97,6 +100,11 @@
     }
     document.addEventListener("DOMContentLoaded", initVanta);
   </script>
+<script>
+    function runAfterPageLoad(e) {
+        "complete" === document.readyState ? e() : window.addEventListener("load", e)
+    }
+</script>
 </body>
 
 </html>
