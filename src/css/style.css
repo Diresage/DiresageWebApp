@@ -55,9 +55,15 @@
   align-items: center;
 }
 
+.vt323-regular {
+  font-family: "Share Tech Mon", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .glitch {
   position: relative;
-  animation: 1s linear infinite alternate-reverse glitch-skew
+  animation: .5s linear infinite alternate-reverse glitch-skew
 }
 
 .glitch::after,.glitch::before {
@@ -249,11 +255,12 @@
 }
 
 .cursor {
-  display: inline-block;
-  width: 6px;
+  display: inline-flex;
+  margin-left: 2px;
+  width: 8px;
   height: 12px;
   background-color: #9997FF;
-  animation: .8s infinite blink;
+  animation: .7s infinite blink;
   vertical-align: baseline;
 }
 
