@@ -61,6 +61,9 @@
                 </div>
                 </div>
             </div> 
+            </div>
+        </div>
+        </div>
     </section>
   
   <!-- Footer -->
@@ -69,8 +72,8 @@
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5">
         <div class="col">
           <p class="text-body-secondary">©2024 Diresage</p>
-            <p class="text-body-secondary">Vanta.js: <a href="https://codepen.io/tommyho">tommyho</a></p>
-            <p class="text-body-secondary">Pure CSS Gradient: <a href="https://codepen.io/P1N2O">P1N2O</a></p>
+            <p class="text-body-secondary">Title BG: <a href="https://codepen.io/tommyho">tommyho</a></p>
+            <p class="text-body-secondary">Footer BG: <a href="https://codepen.io/P1N2O">P1N2O</a></p>
         </div>
       </footer>
     </div>
@@ -88,17 +91,24 @@
     function initVanta() {
       vantaEffect = VANTA.FOG({
         el: ".vanta-bg",
-        highlightColor: 0x849de3,
-        midtoneColor: 0x9a42b8,
-        lowlightColor: 0x2c0587,
-        baseColor: 0xffffff,
-        blurFactor: 0.8,
-        speed: 2.0,
+        highlightColor: 0xe6152,
+        midtoneColor: 0x2c346e,
+        lowlightColor: 0x2d159b,
+        baseColor: 0x0,
+        blurFactor: 0.25,
+        speed: 1.0,
         zoom: 1.0,
-        scale: 2,
+        scale: 1,
         scaleMobile: 4
       });
     }
+    
+    /*
+    highlightColor: 0x849de3,
+        midtoneColor: 0x9a42b8,
+        lowlightColor: 0x2c0587,
+        baseColor: 0x0,
+     */
   
     function colorCycle() {
   // Cycle through rainbow colors at different frequencies
@@ -112,51 +122,15 @@
     }
   
     function cycleColor(frequency) {
-      const time = Date.now() * 0.001;
-      const r = Math.sin(frequency * time + 0) * 127 + 128;
-      const g = Math.sin(frequency * time + 2) * 127 + 128;
-      const b = Math.sin(frequency * time + 4) * 127 + 128;
-      return (r << 16) + (g << 8) + b;
+        const time = Date.now() * 0.0005;
+        const r = Math.sin(frequency * time) * 127 + 128;
+        const g = Math.sin(frequency * time + 2) * 127 + 128;
+        const b = Math.sin(frequency * time + 4) * 127 + 128;
+        return (r << 16) + (g << 8) + b;
     }
-  
-    function changeEffect(effect) {
-      switch(effect) {
-        case 'fog':
-          vantaEffect.setOptions({
-            //highlightColor: Math.random() * 0xFFFFFF,
-            //midtoneColor: Math.random() * 0x0000AA,
-            //lowlightColor: Math.random() * 0xAA0000,
-            //baseColor: Math.random() * 0xFF0000,
-            blurFactor: Math.random() * 1.5 + 0.2,
-            speed: Math.random() * 3 + 0.1,
-          });
-          break;
-      }
-    }
-  
+    
     document.addEventListener("DOMContentLoaded", initVanta);
-    requestAnimationFrame(colorCycle);
-  
-    // Fullscreen toggle functionality
-    const fullscreenToggle = document.getElementById('fullscreen-toggle');
-  
-    fullscreenToggle.addEventListener('click', () => {
-      if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch((err) => {
-          console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-        });
-      } else {
-        document.exitFullscreen();
-      }
-    });
-  
-    document.addEventListener('fullscreenchange', () => {
-      if (document.fullscreenElement) {
-        fullscreenToggle.textContent = 'Exit Fullscreen';
-      } else {
-        fullscreenToggle.textContent = 'Toggle Fullscreen';
-      }
-    });
+    //requestAnimationFrame(colorCycle);
   </script>
 </body>
 
